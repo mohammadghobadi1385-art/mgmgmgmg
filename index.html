@@ -1,131 +1,206 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <title>mgmgmg | شرکت ورزشی</title>
+<meta charset="UTF-8">
+<title>mgmgmg | شرکت ورزشی</title>
+<meta name="description" content="شرکت mgmgmg - فروش تجهیزات ورزشی با کیفیت، شامل توپ، کفش سالنی و استوک">
+<meta name="keywords" content="mgmgmg, ورزش, تجهیزات ورزشی, توپ, کفش سالنی, استوک">
 
-    <meta name="description" content="شرکت mgmgmg - فروش محصولات ورزشی شامل توپ، کفش سالنی و استوک. فعال در زمینه تجهیزات ورزشی با کیفیت.">
-    <meta name="keywords" content="mgmgmg, محصولات ورزشی, توپ, کفش سالنی, استوک, ورزش">
+<style>
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    background-color: #e0e0e0;
+    scroll-behavior: smooth;
+}
 
-    <style>
-        body {
-            font-family: Tahoma, Arial, sans-serif;
-            direction: rtl;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        header p {
-            font-size: 18px;
-        }
-        section {
-            background-color: white;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 900px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-        ul {
-            list-style-type: none;
-            padding-right: 0;
-        }
-        .product-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-        .product-item img {
-            width: 100px;
-            height: auto;
-            margin-left: 15px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        }
-        .product-details {
-            flex: 1;
-        }
-        .price {
-            font-weight: bold;
-            color: #e63946;
-        }
-        .phone {
-            font-size: 18px;
-            font-weight: bold;
-            color: #0066cc;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            margin-top: 30px;
-        }
-    </style>
+/* هدر و منو */
+header {
+    background-color: #0d1b2a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+header h1 { margin: 0; font-size: 32px; }
+nav { margin-top: 10px; }
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    background-color: #1b263b;
+}
+nav a:hover {
+    background-color: #fca311;
+    color: #0d1b2a;
+}
+
+/* بخش‌ها */
+section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+section.visible { opacity: 1; transform: translateY(0); }
+h2 {
+    color: #0d1b2a;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #fca311;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Carousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.product-card {
+    min-width: 280px;
+    margin: 0 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.product-card h3 { margin: 10px 0 5px 0; color: #1b263b; }
+.product-card p { margin: 0 10px 10px 10px; }
+.price { font-weight: bold; color: #d62828; margin-bottom: 10px; }
+
+/* Carousel buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fca311;
+    color: #0d1b2a;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+.carousel-btn:hover { background-color: #e07b00; }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* اعضا */
+ul.members { padding-right: 20px; }
+ul.members li { margin-bottom: 8px; color: #1b263b; }
+
+/* تماس و دکمه‌ها */
+.phone { font-size: 18px; font-weight: bold; color: #1b263b; }
+.contact-button, .whatsapp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+.contact-button { background-color: #fca311; color: #0d1b2a; }
+.contact-button:hover { background-color: #e07b00; }
+.whatsapp-button { background-color: #25d366; color: white; margin-left: 10px; }
+.whatsapp-button:hover { background-color: #1ebe57; }
+
+/* فوتر */
+footer {
+    background-color: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* واکنش‌گرایی موبایل */
+@media screen and (max-width: 768px){
+    .carousel-track { flex-wrap: nowrap; }
+    .product-card { min-width: 220px; margin: 0 5px; }
+    nav a { margin: 0 8px; padding: 5px 8px; font-size: 14px; }
+}
+</style>
 </head>
 <body>
 
 <header>
     <h1>شرکت mgmgmg</h1>
-    <p>فعال در زمینه محصولات ورزشی با کیفیت و تجهیزات حرفه‌ای</p>
+    <nav>
+        <a href="#about">درباره ما</a>
+        <a href="#products">محصولات</a>
+        <a href="#members">اعضا</a>
+        <a href="#contact">ارتباط با ما</a>
+    </nav>
 </header>
 
-<section>
+<section id="about">
     <h2>📖 درباره شرکت</h2>
     <p>شرکت mgmgmg با هدف ارتقاء سطح ورزش و ارائه تجهیزات حرفه‌ای تأسیس شده است.  
     ما انواع محصولات ورزشی از جمله توپ، کفش سالنی و استوک را با کیفیت بالا عرضه می‌کنیم و همواره به رضایت مشتریان خود اهمیت می‌دهیم.</p>
 </section>
 
-<section class="products">
+<section id="products">
     <h2>🛍️ محصولات</h2>
-    
-    <div class="product-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Soccer_ball.png" alt="توپ ورزشی">
-        <div class="product-details">
-            <h3>توپ ورزشی</h3>
-            <p>توپ استاندارد برای تمرین و مسابقات</p>
-            <p class="price">قیمت: 250,000 تومان</p>
+    <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track">
+            <div class="product-card">
+                <img src="ball.jpg" alt="توپ ورزشی">
+                <h3>توپ ورزشی</h3>
+                <p>توپ استاندارد برای تمرین و مسابقات</p>
+                <p class="price">250,000 تومان</p>
+            </div>
+            <div class="product-card">
+                <img src="shoes.jpg" alt="کفش سالنی">
+                <h3>کفش سالنی</h3>
+                <p>سبک و راحت برای ورزش‌های داخل سالن</p>
+                <p class="price">450,000 تومان</p>
+            </div>
+            <div class="product-card">
+                <img src="stok.jpg" alt="استوک ورزشی">
+                <h3>استوک ورزشی</h3>
+                <p>مقاوم و باکیفیت برای فوتبال و ورزش‌های حرفه‌ای</p>
+                <p class="price">600,000 تومان</p>
+            </div>
         </div>
+        <button class="carousel-btn next">&#10095;</button>
     </div>
-
-    <div class="product-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Indoor_shoes.jpg" alt="کفش سالنی">
-        <div class="product-details">
-            <h3>کفش سالنی</h3>
-            <p>سبک و راحت برای ورزش‌های داخل سالن</p>
-            <p class="price">قیمت: 450,000 تومان</p>
-        </div>
-    </div>
-
-    <div class="product-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Football_boots.jpg" alt="استوک">
-        <div class="product-details">
-            <h3>استوک ورزشی</h3>
-            <p>مقاوم و باکیفیت برای فوتبال و ورزش‌های حرفه‌ای</p>
-            <p class="price">قیمت: 600,000 تومان</p>
-        </div>
-    </div>
-
 </section>
 
-<section>
+<section id="members">
     <h2>👥 اعضای شرکت</h2>
-    <ul>
+    <ul class="members">
         <li>محمد قبادی</li>
         <li>مهدی شاهینی</li>
         <li>فرازد شاهینی</li>
@@ -133,15 +208,56 @@
     </ul>
 </section>
 
-<section>
+<section id="contact">
     <h2>📞 ارتباط با ما</h2>
     <p>برای دریافت اطلاعات بیشتر و مشاوره با ما تماس بگیرید:</p>
     <p class="phone">09905672795</p>
+    <a href="tel:09905672795" class="contact-button">تماس مستقیم</a>
+    <a href="https://wa.me/989905672795" target="_blank" class="whatsapp-button">واتساپ</a>
 </section>
 
 <footer>
     <p>© 2026 - شرکت mgmgmg</p>
 </footer>
+
+<script>
+// انیمیشن هنگام اسکرول
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight / 5 * 4;
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom){
+            section.classList.add('visible');
+        }
+    });
+});
+
+// Carousel محصولات
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let index = 0;
+
+function updateCarousel(){
+    track.style.transform = `translateX(${-index * (track.children[0].offsetWidth + 20)}px)`;
+}
+
+prevBtn.addEventListener('click', () => {
+    index--;
+    if(index < 0) index = 0;
+    updateCarousel();
+});
+
+nextBtn.addEventListener('click', () => {
+    index++;
+    const maxIndex = track.children.length - Math.floor(track.parentElement.offsetWidth / (track.children[0].offsetWidth + 20));
+    if(index > maxIndex) index = maxIndex;
+    updateCarousel();
+});
+
+window.addEventListener('resize', updateCarousel);
+</script>
 
 </body>
 </html>
