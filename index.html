@@ -4,46 +4,77 @@
     <meta charset="UTF-8">
     <title>mgmgmg | شرکت ورزشی</title>
 
-    <meta name="description" content="شرکت mgmgmg - فروش محصولات ورزشی شامل توپ، کفش سالنی و استوک">
-    <meta name="keywords" content="mgmgmg, توپ, کفش سالنی, استوک, محصولات ورزشی">
+    <meta name="description" content="شرکت mgmgmg - فروش محصولات ورزشی شامل توپ، کفش سالنی و استوک. فعال در زمینه تجهیزات ورزشی با کیفیت.">
+    <meta name="keywords" content="mgmgmg, محصولات ورزشی, توپ, کفش سالنی, استوک, ورزش">
 
     <style>
         body {
             font-family: Tahoma, Arial, sans-serif;
             direction: rtl;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
         }
         header {
             background-color: #222;
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header p {
+            font-size: 18px;
         }
         section {
             background-color: white;
-            margin: 20px;
+            margin: 20px auto;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
+            max-width: 900px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         h2 {
             color: #333;
+            margin-bottom: 15px;
         }
         ul {
-            list-style-type: square;
-            padding-right: 20px;
+            list-style-type: none;
+            padding-right: 0;
         }
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .product-item img {
+            width: 100px;
+            height: auto;
+            margin-left: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        .product-details {
+            flex: 1;
+        }
+        .price {
+            font-weight: bold;
+            color: #e63946;
         }
         .phone {
             font-size: 18px;
             font-weight: bold;
             color: #0066cc;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -51,16 +82,45 @@
 
 <header>
     <h1>شرکت mgmgmg</h1>
-    <p>فعال در زمینه محصولات ورزشی</p>
+    <p>فعال در زمینه محصولات ورزشی با کیفیت و تجهیزات حرفه‌ای</p>
 </header>
 
 <section>
+    <h2>📖 درباره شرکت</h2>
+    <p>شرکت mgmgmg با هدف ارتقاء سطح ورزش و ارائه تجهیزات حرفه‌ای تأسیس شده است.  
+    ما انواع محصولات ورزشی از جمله توپ، کفش سالنی و استوک را با کیفیت بالا عرضه می‌کنیم و همواره به رضایت مشتریان خود اهمیت می‌دهیم.</p>
+</section>
+
+<section class="products">
     <h2>🛍️ محصولات</h2>
-    <ul>
-        <li>توپ ورزشی</li>
-        <li>کفش سالنی</li>
-        <li>استوک ورزشی</li>
-    </ul>
+    
+    <div class="product-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Soccer_ball.png" alt="توپ ورزشی">
+        <div class="product-details">
+            <h3>توپ ورزشی</h3>
+            <p>توپ استاندارد برای تمرین و مسابقات</p>
+            <p class="price">قیمت: 250,000 تومان</p>
+        </div>
+    </div>
+
+    <div class="product-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Indoor_shoes.jpg" alt="کفش سالنی">
+        <div class="product-details">
+            <h3>کفش سالنی</h3>
+            <p>سبک و راحت برای ورزش‌های داخل سالن</p>
+            <p class="price">قیمت: 450,000 تومان</p>
+        </div>
+    </div>
+
+    <div class="product-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Football_boots.jpg" alt="استوک">
+        <div class="product-details">
+            <h3>استوک ورزشی</h3>
+            <p>مقاوم و باکیفیت برای فوتبال و ورزش‌های حرفه‌ای</p>
+            <p class="price">قیمت: 600,000 تومان</p>
+        </div>
+    </div>
+
 </section>
 
 <section>
@@ -75,7 +135,7 @@
 
 <section>
     <h2>📞 ارتباط با ما</h2>
-    <p>برای ارتباط با ما و دریافت اطلاعات بیشتر تماس بگیرید:</p>
+    <p>برای دریافت اطلاعات بیشتر و مشاوره با ما تماس بگیرید:</p>
     <p class="phone">09905672795</p>
 </section>
 
